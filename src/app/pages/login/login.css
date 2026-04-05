@@ -1,0 +1,243 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.auth-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: url('/assets/images/gaming.jpg') center / cover no-repeat;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.auth-card {
+  position: relative;
+  margin: 10px;
+  z-index: 1;
+  width: 100%;
+  max-width: 640px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 28px;
+  padding: 36px 40px 32px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.tab {
+  padding: 0 30px;
+  height: 60px;
+  border: none;
+  border-radius: 100px;
+  background: transparent;
+  color: #222;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.tab.active {
+  background: #7168f6;
+  color: white;
+  box-shadow: 0 8px 20px rgba(103, 100, 240, 0.35);
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+  color: #222;
+  margin: 0 0 20px;
+}
+
+.auth-form {
+  width: 100%;
+}
+
+.form-body form {
+  display: none;
+}
+
+.form-body form.active-form {
+  display: block;
+}
+
+.text-danger {
+  margin-bottom: 18px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  height: 62px;
+  background: white;
+  border: 1px solid #e7e7e7;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.input-group .icon {
+  width: 20px;
+  min-width: 20px;
+  margin: 0 16px;
+}
+
+.input-group .icon.right {
+  cursor: pointer;
+}
+
+.input-group input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  color: #333;
+  padding: 0 12px;
+}
+
+.input-group input::placeholder {
+  color: #999;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 6px 0 28px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #666;
+  font-size: medium;
+}
+
+.remember input {
+  width: 18px;
+  height: 18px;
+  accent-color: #6b67f5;
+}
+
+.forgot-link {
+  color: #4fa0e8;
+  text-decoration: none;
+  font-size: medium;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+.register-submit{
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.login-btn {
+  width: 100%;
+  height: 68px;
+  border: none;
+  border-radius: 999px;
+  background: #7168f6;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(103, 100, 240, 0.28);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.login-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(103, 100, 240, 0.34);
+}
+
+.divider-text {
+  text-align: center;
+  color: #666;
+  font-size: 18px;
+  margin: 34px 0 18px;
+}
+
+.social-login {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.social-btn {
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 20%;
+  background: white;
+  color: #666;
+  font-size: medium;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.btn-submit button:disabled {
+  cursor: none;
+  background: #666;
+}
+
+
+
+@media (max-width: 768px) {
+  .auth-card {
+    padding: 28px 22px 24px;
+    border-radius: 22px;
+    margin: 10px;
+  }
+
+  .tab {
+    font-size: 18px;
+    height: 54px;
+  }
+
+  .auth-card h1 {
+    font-size: 42px;
+    margin-bottom: 24px;
+  }
+
+  .input-group {
+    height: 54px;
+  }
+
+  .input-group input {
+    font-size: 18px;
+  }
+
+  .login-btn {
+    height: 58px;
+    font-size: 20px;
+  }
+
+  .remember,
+  .forgot-link,
+  .divider-text {
+    font-size: 16px;
+  }
+}
