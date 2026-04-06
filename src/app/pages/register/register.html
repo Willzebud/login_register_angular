@@ -1,0 +1,98 @@
+<form
+        [formGroup]="registerForm"
+      >
+        <h1>Create Account</h1>
+
+        <div class="input-group">
+          <img class="icon" src="/assets/icons/utilisateur.png" alt="" />
+          <input type="text" formControlName="fullName" required placeholder="Pseudo" />
+        </div>
+        <div class="text-danger">
+          @if (
+            registerForm.get('fullName')?.touched &&
+            registerForm.get('fullName')?.errors?.['required']
+          ) {
+            <span>Pseudo required</span>
+          }
+        </div>
+
+        <div class="input-group">
+          <img class="icon" src="/assets/icons/e-mail.png" alt="" />
+          <input type="email" formControlName="emailId" required placeholder="Email" />
+        </div>
+        <div class="text-danger">
+          @if (
+            registerForm.get('emailId')?.touched &&
+            registerForm.get('emailId')?.errors?.['required']
+          ) {
+            <span>Email required</span>
+          }
+
+          @if (registerForm.get('emailId')?.errors?.['email']) {
+            <span>Invalid email</span>
+          }
+        </div>
+
+        <div class="input-group">
+          <img class="icon" src="/assets/icons/verr-alt.png" alt="" />
+          <input type="password" formControlName="password" required placeholder="Password" />
+          <img class="icon" src="/assets/icons/oeil.png" alt="" />
+        </div>
+        <div class="text-danger">
+          @if (
+            registerForm.get('password')?.touched &&
+            registerForm.get('password')?.errors?.['required']
+          ) {
+            <span>Password required</span>
+          }
+
+          @if (registerForm.get('password')?.errors?.['pattern']) {
+            <span
+              >The password must contain an uppercase and lowercase letter, a special character, and
+              be at least 8 characters long.</span
+            >
+          }
+        </div>
+
+        <div class="input-group">
+          <img class="icon" src="/assets/icons/verr-alt.png" alt="" />
+          <input
+            type="password"
+            formControlName="confirmPassword"
+            required
+            placeholder="Confirm Password"
+          />
+        </div>
+        <div class="text-danger">
+          @if (
+            registerForm.get('confirmPassword')?.touched &&
+            registerForm.get('confirmPassword')?.errors?.['required']
+          ) {
+            <span>Confirm password required</span>
+          }
+
+          @if (!passwordMatch() && registerForm.get('confirmPassword')?.touched) {
+            <span>Passwords do not match</span>
+          }
+        </div>
+        <div class="form-options">
+          <label class="remember">
+            <input type="checkbox" />
+            <span
+              >I agree to the <a href="#" class="forgot-link">Terms of Service</a> and
+              <a href="#" class="forgot-link">Privacy Policy</a></span
+            >
+          </label>
+        </div>
+
+        <div class="btn-submit">
+          <button
+            type="button"
+            (click)="onRegister()"
+            [disabled]="registerForm.invalid || !passwordMatch() || isSubmitting()"
+            class="login-btn"
+          >
+            Register
+          </button>
+        </div>
+      </form>

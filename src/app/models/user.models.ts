@@ -1,5 +1,3 @@
-
-
 export interface UserRegister {
     userId: number;
     emailId: string;
@@ -9,5 +7,5 @@ export interface UserRegister {
 
 export interface UserLogin {
     emailId: string;
-    fullName: string;
+    password: string;
 }

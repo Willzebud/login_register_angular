@@ -1,0 +1,21 @@
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.logout-btn {
+  width: 200px;
+  height: 68px;
+  border: none;
+  border-radius: 999px;
+  background: #7168f6;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(103, 100, 240, 0.28);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
